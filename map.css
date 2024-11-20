@@ -1,0 +1,224 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    color: white;
+    text-align: center;
+    padding-top: 50px;
+    position: relative;
+    z-index: 0;
+    min-height: 125vh;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-image: url('/assets/background.jpg');
+    background-color: rgba(165, 38, 38, 0.671); 
+    background-blend-mode: multiply; 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.bingkai {
+    width: 700px;
+    height: 90px;
+}
+
+.location-container {
+    max-width: 80%;
+    margin: 0 auto;
+    padding-top: 50px;
+}
+
+h1 {
+    font-size: 50px;
+    margin-bottom: 15px;
+    font-family: 'Croissant One', sans-serif;
+}
+
+.section {
+    margin-bottom: 20px;
+}
+
+.section p {
+    font-size: 30px;
+    margin-bottom: 8px;
+    font-family: 'Inknut Antiqua', serif;
+}
+
+.map-placeholder {
+    display: inline-block;
+    width: 100%;
+    padding: 12px;
+    background-color: #ffffff;
+    color: #8c1d1d;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 16px;
+    font-family: 'Arial', sans-serif;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.akad, .resepsi {
+    border-radius: 50px;
+    height: 200px;
+}
+
+.map-placeholder:hover {
+    background-color: #ffcccc;
+    color: #8c1d1d;
+}
+
+footer {
+    position: absolute;
+    bottom: 20px;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    padding: 15px;
+    font-size: 18px;
+    background-color: #ff4500;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.footer-container {
+    background-color: rgba(230, 30, 30, 0.6);
+    padding: 10px 20px;
+    border-radius: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 200px;
+}
+
+.footer-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.2s ease;
+}
+
+.footer-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.footer-btn svg {
+    stroke: #fff;
+    width: 24px;
+    height: 24px;
+}
+
+.heart-btn {
+    background-color: #ff6f6f;
+}
+
+.heart-btn:hover {
+    background-color: #ff8585;
+}
+
+/* Media Queries untuk layar dengan lebar maksimal 768px */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 36px;
+    }
+  
+    .section p {
+        font-size: 24px;
+    }
+  
+    .akad, .resepsi {
+        height: 200px;
+        width: 300px;
+    }
+  
+    button {
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    .bingkai {
+        width: 500px;
+        height: 70px;
+    }
+
+    footer {
+        margin-top: 30px; /* Mengurangi jarak antara konten dan footer */
+        padding-bottom: 100px; /* Mengurangi padding bawah footer */
+    }
+  
+    .footer-container {
+        padding: 10px; /* Mengurangi padding untuk tampilan yang lebih ringkas */
+    }
+
+    /* Tambahkan kontrol tinggi pada body */
+    body {
+        min-height: 100vh; /* Menggunakan 100% dari tinggi viewport */
+        margin: 0;
+        padding: 0;
+    }
+}
+
+/* Media Queries untuk layar dengan lebar maksimal 480px */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 28px;
+    }
+  
+    .section p {
+        font-size: 20px;
+    }
+  
+    .akad, .resepsi {
+        height: 150px;
+    }
+
+    footer {
+        margin-top: 30px; /* Mengurangi jarak antara konten dan footer */
+        padding-bottom: 80px; /* Mengurangi padding bawah footer */
+        align-items: center;
+    }
+
+    .footer-container {
+        width: 53%;
+    }
+
+    .bingkai {
+        width: 300px;
+        height: 50px;
+    }
+
+    /* Pastikan tinggi minimum pada layar kecil */
+    body {
+        min-height: 100vh; /* Menggunakan 100% dari tinggi viewport */
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Tambahkan pengaturan untuk mencegah konten terlalu tinggi */
+    .content {
+        padding: 20px;
+    }
+}
+
+.audio-player {
+    margin-top: 50px;
+    margin-left: -100px;
+    display: flex;
+}

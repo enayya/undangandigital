@@ -1,0 +1,254 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.gallery-card {
+    position: relative;
+    z-index: 0;
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-image: url('/assets/background.jpg');
+    background-color: rgba(165, 38, 38, 0.671); 
+    background-blend-mode: multiply; 
+    background-size: cover;
+    background-position: center;
+}
+
+.foto {
+    font-family: 'Jacques Francois', serif;
+    font-size: 35px;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 20px;
+    padding-top: 30px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 kolom */
+    gap: 15px;
+    max-width: 1200px;
+    width: 100%;
+    opacity: 0; /* untuk animasi fade-in */
+    transform: translateY(30px); /* animasi slide-up */
+    animation: fadeInUp 1s ease forwards;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer; /* pointer ketika hover */
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* shadow di sekitar gambar */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05); /* memperbesar gambar sedikit saat hover */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4); /* memperbesar shadow saat hover */
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.1); /* efek zoom lebih besar */
+    filter: brightness(1.2); /* meningkatkan kecerahan gambar */
+}
+
+/* Animasi muncul (fade-in) */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+button {
+    padding: 15px;
+    font-size: 18px;
+    background-color: #ff4500;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+footer {
+    position: fixed;
+    bottom: 20px; 
+    left: 50%;
+    transform: translateX(-50%); 
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 10; 
+}
+
+.footer-container {
+    background-color: rgba(230, 30, 30, 0.6);
+    padding: 10px 20px;
+    border-radius: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 200px;
+}
+
+.footer-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.2s ease;
+}
+
+.footer-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.footer-btn svg {
+    stroke: #fff;
+    width: 24px;
+    height: 24px;
+}
+
+.heart-btn {
+    background-color: #ff6f6f;
+}
+
+.heart-btn:hover {
+    background-color: #ff8585;
+}
+
+/* Responsif untuk layar dengan lebar maksimal 1024px (tablet) */
+@media (max-width: 1024px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr); /* Kurangi jumlah kolom menjadi 2 */
+        gap: 10px; /* Kurangi jarak antar gambar */
+    }
+
+    .gallery-item {
+        border-radius: 30px;
+        animation: fadeIn 0.3s forwards; /* Kurangi radius border */
+    }
+
+    .foto {
+        font-size: 30px; /* Kurangi ukuran font */
+        padding-top: 20px;
+    }
+
+    footer {
+        bottom: 10px; /* Kurangi jarak bawah footer */
+    }
+
+    .footer-container {
+        width: 180px; /* Kurangi lebar footer */
+    }
+}
+
+/* Responsif untuk layar dengan lebar maksimal 768px (tablet lebih kecil) */
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: 1fr; /* Satu kolom untuk tampilan yang lebih sempit */
+        gap: 10px;
+    }
+
+    .gallery-item {
+        border-radius: 20px;
+        animation: fadeIn 0.4s forwards; /* Durasi medium */
+        animation-delay: 0.1s; /* Kurangi radius border */
+    }
+
+    .foto {
+        font-size: 25px; /* Kurangi ukuran font lebih jauh */
+    }
+
+    button {
+        padding: 12px;
+        font-size: 16px;
+    }
+
+    .footer-container {
+        width: 160px;
+    }
+
+    footer {
+        bottom: 8px; /* Lebih kecil jarak bawah */
+    }
+}
+
+/* Responsif untuk layar dengan lebar maksimal 480px (ponsel) */
+@media (max-width: 480px) {
+    .gallery-card {
+        min-height: 100vh; /* Sesuaikan tinggi agar sesuai layar */
+        padding: 10px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr; /* Satu kolom di layar sangat kecil */
+        gap: 8px;
+    }
+
+    .gallery-item {
+        border-radius: 15px;
+        animation: fadeIn 0.5s forwards; /* Durasi lebih lama untuk layar kecil */
+        animation-delay: 0.5s; /* Radius lebih kecil */
+    }
+
+    .foto {
+        font-size: 20px; /* Ukuran font lebih kecil */
+        padding-top: 10px;
+    }
+
+    button {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .footer-container {
+        width: 140px;
+        padding: 8px; /* Kurangi padding untuk footer */
+    }
+
+    .footer-btn svg {
+        width: 20px; /* Ukuran ikon lebih kecil */
+        height: 20px;
+    }
+
+    footer {
+        bottom: 5px; /* Jarak lebih sempit di bawah */
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

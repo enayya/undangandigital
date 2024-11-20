@@ -1,0 +1,255 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.pengantin {
+    position: relative;
+    z-index: 0;
+    min-height: 100vh;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-image: url('/assets/background.jpg');
+    background-color: rgba(165, 38, 38, 0.671); 
+    background-blend-mode: multiply; 
+    background-size: cover;
+    background-position: center;
+    width: 500%;
+    max-width: 100%;
+}
+
+.pembuka {
+    font-family: 'Jacques Francois', 'serif';
+    display: inline-block;
+    font-size: 25px;
+    padding-top: 10px;
+    color: #ffffff;
+    text-align: center;
+    font-size: 35px;
+}
+
+.bride-groom-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    animation: fadeInUp 1s ease forwards;
+    opacity: 0;
+    width: 100%;
+    padding: 0 20px;
+}
+
+.groom, .bride {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-direction: row;
+    opacity: 0; /* Awal transparan */
+    animation: slideIn 1s ease forwards; /* Animasi muncul */
+    transform: translateY(20px); /* Mulai sedikit turun */
+    animation-delay: 0.3s;
+}
+
+.groom-info, .bride-info {
+    color: #fff;
+    font-family: 'Jacques Francois', serif;
+    text-align: left;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px); /* Muncul dari bawah */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Akhir di posisi normal */
+    }
+}
+
+.groom-info h2, .bride-info h2 {
+    font-size: 35px;
+    margin: 0;
+    animation: slideIn 5s ease forwards;
+}
+
+.groom-info p, .bride-info p {
+    font-size: 25px;
+    margin-top: 5px;
+    animation: slideIn 10s ease forwards;
+}
+
+.bride-info hr, .groom-info hr {
+    border: 0;
+    border-top: 2px solid #fff; 
+    width: 50%; 
+    margin: 5px auto;
+}
+
+.groom img {
+    width: 430px; 
+    height: auto;
+    object-fit: cover;
+    padding-top: 23px;
+    opacity: 0;
+    animation: slideIn 3s ease forwards;
+}
+
+.bride img {
+    width: 420px; 
+    height: auto;
+    object-fit: cover;
+    padding-top: 23px;
+    opacity: 0;
+    animation: slideIn 3s ease forwards;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-30px); /* Mulai dari kiri */
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0); /* Akhir di posisi normal */
+    }
+}
+
+footer {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    padding: 15px;
+    font-size: 18px;
+    background-color: #ff4500;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.footer-container {
+    background-color: rgba(230, 30, 30, 0.6);
+    padding: 10px 20px;
+    border-radius: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 200px;
+}
+
+.footer-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.2s ease;
+}
+
+.footer-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.footer-btn svg {
+    stroke: #fff;
+    width: 24px;
+    height: 24px;
+}
+
+.heart-btn {
+    background-color: #ff6f6f;
+    transition: transform 0.2s ease;
+}
+
+.heart-btn:hover {
+    background-color: #ff8585;
+}
+
+.heart-btn:active {
+    transform: scale(0.9);
+}
+
+/* Existing styles... */
+
+@media (max-width: 768px) {
+    .bride-groom-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .groom, .bride {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .groom img, .bride img {
+        width: 90%; /* Adjust image size for smaller screens */
+        max-width: 400px; /* Limit max width */
+    }
+
+    .pembuka {
+        font-size: 28px; /* Adjust font size */
+    }
+
+    .groom-info h2, .bride-info h2 {
+        font-size: 30px; /* Adjust title size */
+    }
+
+    .groom-info p, .bride-info p {
+        font-size: 20px; /* Adjust paragraph size */
+    }
+}
+
+@media (max-width: 480px) {
+    .bride-groom-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .pengantin {
+        max-width: auto;
+    }
+    .pembuka {
+        font-size: 24px; /* Further reduce font size */
+    }
+
+    .groom img, .bride img {
+        width: 50%; /* Adjust image size for smaller screens */
+        max-width: 200px; /* Limit max width */
+    }
+
+    .groom-info h2, .bride-info h2 {
+        font-size: 24px; /* Further reduce title size */
+    }
+
+    .groom-info p, .bride-info p {
+        font-size: 18px; /* Further reduce paragraph size */
+    }
+}
+
+@keyframes zoomIn {
+    from {
+      transform: scale(0.8);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  .page-zoom-in {
+    animation: zoomIn 1s ease-in-out forwards;
+  }
+  
+

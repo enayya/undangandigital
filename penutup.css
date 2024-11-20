@@ -1,0 +1,279 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.penutup-card {
+    position: relative;
+    z-index: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-image: url('/assets/background.jpg');
+    background-color: rgba(165, 38, 38, 0.671); 
+    background-blend-mode: multiply; 
+    background-size: cover;
+    background-position: center;
+}
+
+.invitation-content {
+    background-color: #9e3d3d75;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.295);
+    padding: 50px;
+    border-radius: 50%;
+    width: 800px;
+    height: 350px;
+    display: flex; /* Mengaktifkan Flexbox */
+    flex-direction: column; /* Menyusun elemen secara vertikal */
+    justify-content: center; /* Elemen vertikal di tengah */
+    align-items: center; /* Elemen horizontal di tengah */
+    margin: 0 auto; /* Agar berada di tengah secara horizontal */
+    margin-top: 100px;
+}
+
+.invitation-content h2 {
+    font-size: 50px;
+    color: #ffffff;
+    margin-bottom: 20px;
+    text-align: center; /* Teks di tengah */
+}
+
+.family-section {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.family-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 1px;
+    background-color: #ddd;
+}
+
+.family p {
+    font-size: 25px;
+    color: #ffffff;
+    line-height: 1.5;
+    text-align: center; /* Agar teks dalam elemen berada di tengah */
+}
+
+.instagram-section {
+    margin: 20px 0;
+    text-align: center; /* Agar teks Instagram berada di tengah */
+}
+
+.circle {
+    display: inline-block;
+    width: 0px; /* Berikan lebar yang sesuai */
+    height: 0px; /* Berikan tinggi yang sesuai */
+    border-radius: 50%;
+    background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto; /* Untuk memusatkan elemen secara horizontal */
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    padding-top: 20px;
+}
+
+.circle img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.circle p {
+    margin-top: 10px;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+.thank-you {
+    margin-top: 30px;
+    display: flex; /* Mengaktifkan flexbox */
+    justify-content: center; /* Pusatkan secara horizontal */
+    align-items: center; /* Pusatkan secara vertikal */
+}
+
+.thank-you p {
+    font-size: 50px;
+    color: #ffffff;
+    font-style: italic;
+    font-weight: bold;
+    text-align: center; /* Teks berada di tengah */
+}
+
+/* Add hover effects for family and Instagram section */
+.family-section .family:hover {
+    color: #000;
+    transform: translateY(-3px);
+    transition: 0.3s ease;
+}
+
+.instagram-section .circle:hover {
+    box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.2);
+    transition: 0.3s ease;
+}
+
+/* penutup.css - Tambahkan gaya untuk tombol */
+.out-page {
+    margin-top: 20px;
+    text-align: left;
+    padding-left: 30px;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ff0000;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #990000;
+}
+
+/* Responsif untuk layar dengan lebar maksimal 1024px (tablet) */
+@media (max-width: 1024px) {
+    .invitation-content {
+        width: 90%; /* Lebar lebih kecil untuk tablet */
+        padding: 30px; /* Padding lebih kecil */
+        height: auto; /* Sesuaikan tinggi dengan konten */
+    }
+
+    .invitation-content h2 {
+        font-size: 40px; /* Ukuran font lebih kecil */
+    }
+
+    .family-section {
+        flex-direction: column; /* Susun secara vertikal */
+        align-items: center; /* Pusatkan elemen secara horizontal */
+    }
+
+    .family-section::before {
+        display: none; /* Hilangkan garis tengah */
+    }
+
+    .family p {
+        font-size: 20px; /* Ukuran font lebih kecil */
+    }
+
+    .thank-you p {
+        font-size: 40px; /* Ukuran font lebih kecil */
+    }
+
+    .circle {
+        width: 0px; /* Lebar lingkaran lebih kecil */
+        height: 0px; /* Tinggi lingkaran lebih kecil */
+        padding-top: 10px; /* Sesuaikan padding */
+    }
+
+    .circle img {
+        width: 30px; /* Ukuran gambar lebih kecil */
+        height: 30px; /* Ukuran gambar lebih kecil */
+    }
+
+    .circle p {
+        font-size: 18px; /* Ukuran font lebih kecil */
+    }
+
+    .out-page {
+        text-align: center; /* Pusatkan teks untuk tombol */
+        padding-left: 0; /* Hilangkan padding */
+    }
+}
+
+/* Responsif untuk layar dengan lebar maksimal 768px (ponsel) */
+@media (max-width: 768px) {
+    .invitation-content {
+        width: 95%; /* Lebar lebih kecil */
+        padding: 20px; /* Padding lebih kecil */
+    }
+
+    .invitation-content h2 {
+        font-size: 35px; /* Ukuran font lebih kecil */
+    }
+
+    .family p {
+        font-size: 18px; /* Ukuran font lebih kecil */
+    }
+
+    .thank-you p {
+        font-size: 30px; /* Ukuran font lebih kecil */
+    }
+
+    .circle {
+        width: 0px; /* Lebar lingkaran lebih kecil */
+        height: 0px; /* Tinggi lingkaran lebih kecil */
+    }
+
+    .circle img {
+        width: 25px; /* Ukuran gambar lebih kecil */
+        height: 25px; /* Ukuran gambar lebih kecil */
+    }
+
+    .circle p {
+        font-size: 16px; /* Ukuran font lebih kecil */
+    }
+
+    .button {
+        padding: 8px 16px; /* Padding lebih kecil */
+        font-size: 0.9rem; /* Ukuran font lebih kecil */
+    }
+}
+
+/* Responsif untuk layar dengan lebar maksimal 480px (ponsel sangat kecil) */
+@media (max-width: 480px) {
+    .invitation-content {
+        width: 80%; /* Lebar penuh */
+        height: auto; /* Sesuaikan tinggi dengan konten */
+        padding: 15px; /* Padding lebih kecil */
+    }
+
+    .invitation-content h2 {
+        font-size: 30px; /* Ukuran font lebih kecil */
+    }
+
+    .family p {
+        font-size: 20px; /* Ukuran font lebih kecil */
+    }
+
+    .thank-you p {
+        font-size: 24px; /* Ukuran font lebih kecil */
+    }
+
+    .circle {
+        width: 0px; /* Lebar lingkaran lebih kecil */
+        height: 0px; /* Tinggi lingkaran lebih kecil */
+    }
+
+    .circle img {
+        width: 20px; /* Ukuran gambar lebih kecil */
+        height: 20px; /* Ukuran gambar lebih kecil */
+    }
+
+    .circle p {
+        font-size: 14px; /* Ukuran font lebih kecil */
+    }
+
+    .button {
+        padding: 6px 12px; /* Padding lebih kecil */
+        font-size: 0.8rem; /* Ukuran font lebih kecil */
+    }
+}
