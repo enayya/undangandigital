@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lokasi</title>
+    <link rel="stylesheet" href="/style/map.css">
+</head>
+<body>
+    <div class="location-container">
+      <img src="/assets/╔══ ❀•°❀°•❀ ══╗.png" alt="bingkai" class="bingkai">
+        <h1>LOKASI</h1>
+        <div class="section">
+            <p>akad</p>
+            <iframe class="akad" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3983.28609919776!2d114.5975215!3d-3.2790707!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2de4236bed1dead1%3A0x8204bc1c14160a29!2sKomplek%20Hamparan%20Warga%20Indah%20IX!5e0!3m2!1sen!2sid!4v1727160828292!5m2!1sen!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="section">
+            <p>resepsi</p>
+            <iframe class="resepsi" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.3675790782813!2d106.797062!3d-6.2151599!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f14bba661065%3A0x40c7383d6eb0bab5!2sHotel%20Mulia%20Senayan%20Jakarta!5e0!3m2!1sen!2sid!4v1727161033668!5m2!1sen!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <img src="/assets/╚══ ❀•°❀°•❀ ══╝.png" alt="bingkai" class="bingkai">
+        <footer>
+            <div class="footer-container">
+            <a href="/page/event.html">
+              <button class="footer-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+              </button>
+            </a>
+              <button class="footer-btn heart-btn">
+                <svg width="600" height="300" viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="0" y="0" width="600" height="300" fill="#e0e0e0"/>
+                    <path d="M10,10 h100 v100 h-100 Z" fill="#ff5722" />
+                    <path d="M120,10 h100 v100 h-100 Z" fill="#4caf50" />
+                    <path d="M10,120 h100 v100 h-100 Z" fill="#2196f3" />
+                    <path d="M120,120 h100 v100 h-100 Z" fill="#ffeb3b" />
+                </svg>
+              </button>   
+              <a href="/page/rsvp.html">
+                <button class="footer-btn">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg>
+                </button>
+              </a>
+            </div>
+          </footer>
+          <div class="audio-player">
+            <audio id="myAudio" controls>
+                <source src="/assets/audio.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+    </div>
+    <script>
+       window.onload = function() {
+    const audio = document.getElementById('myAudio');
+    const playPauseButton = document.getElementById('playPause');
+    const stopButton = document.getElementById('stopAudio');
+    const savedTime = localStorage.getItem('audioTime');
+    if (savedTime) {
+        audio.currentTime = savedTime; 
+    }
+    window.onbeforeunload = function() {
+        localStorage.setItem('audioTime', audio.currentTime);
+    };
+    playPauseButton.addEventListener('click', function() {
+        if (audio.paused) {
+            audio.play();
+        } else {
+            audio.pause();
+        }
+    });
+    stopButton.addEventListener('click', function() {
+        audio.pause();
+        audio.currentTime = 0;
+    });
+};
+    </script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GIFT</title>
+    <link rel="stylesheet" href="/style/gift.css">
+</head>
+<body>
+    <div class="gift-card">
+        <div class="container">
+            <p class="gift">GIFT</p>
+        </div>
+        <div class="hadiah-container">
+            <div class="payment-card">
+                <img src="/assets/logobri.png" alt="BRI Logo" class="logo">
+                <div class="account-info">
+                    <span class="account-number">628171207</span>
+                    <button class="copy-btn">Salin</button>
+                </div>
+            </div>
+            <div class="copy-notification">Nomor rekening disalin!</div>
+            <div class="payment-card">
+                <img src="/assets/dana.webp" alt="BRI Logo" class="logo">
+                <div class="account-info">
+                    <span class="account-number">628171208</span>
+                    <button class="copy-btn">Salin</button>
+                </div>
+            </div>
+            <div class="copy-notification">Nomor rekening disalin!</div>
+            <div class="payment-card">
+              <img src="/assets/bi.png" alt="BRI Logo" class="logo">
+              <div class="account-info">
+                  <span class="account-number">628171208</span>
+                  <button class="copy-btn">Salin</button>
+              </div>
+          </div>
+          <div class="copy-notification">Nomor rekening disalin!</div>
+            <footer>
+                <div class="footer-container">
+                <a href="/page/rsvp.html">
+                  <button class="footer-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                  </button>
+                </a>
+                <button class="footer-btn gift-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="20 12 20 22 4 22 4 12"></polyline>
+                        <rect x="2" y="7" width="20" height="5"></rect>
+                        <line x1="12" y1="22" x2="12" y2="7"></line>
+                        <path d="M12 7C10.3333 7 8 5.6 8 4.5C8 3.4 9.33333 2 12 2C14.6667 2 16 3.4 16 4.5C16 5.6 13.6667 7 12 7Z"></path>
+                    </svg>
+                </button>                         
+                  <a href="/page/gallery.html">
+                    <button class="footer-btn">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                      </svg>
+                    </button>
+                  </a>
+                </div>
+              </footer>
+         </div> 
+    </div>  
+    <script>
+        const copyButtons = document.querySelectorAll('.copy-btn');
+        const notifications = document.querySelectorAll('.copy-notification');
+        copyButtons.forEach((button, index) => {
+            button.addEventListener('click', function() {
+                const accountNumber = document.querySelectorAll('.account-number')[index].textContent;
+                const tempInput = document.createElement('textarea');
+                tempInput.value = accountNumber;
+                document.body.appendChild(tempInput);
+                tempInput.select();
+                document.execCommand('copy');
+                document.body.removeChild(tempInput);
+                button.textContent = 'Disalin!';
+                const notification = notifications[index];
+                notification.classList.add('show');
+                setTimeout(() => {
+                    notification.classList.remove('show');
+                    button.textContent = 'Salin'; 
+                }, 2000);
+            });
+        });
+    </script>                
+</body>
+</html>

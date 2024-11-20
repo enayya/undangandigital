@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pengantin Page</title>
+    <link rel="stylesheet" href="/style/pengantin.css"> 
+</head>
+<body>
+    <div class="pengantin">
+      <div class="page-zoom-in">
+        <p class="pembuka">Maha Suci Allah yang telah menciptakan makhluk-Nya berpasang-pasangan 
+            Ya Allah semoga ridho-Mu tercurah mengiringi pernikahan putra-putri kami :</p>
+        <div class="bride-groom-container">
+            <div class="groom">
+                <img src="/assets/Group 3.png" alt="Groom">
+                <div class="groom-info">
+                    <h2>Alian Arhazza</h2>
+                    <hr>
+                    <p>Bin Erdna Damha</p>
+                </div>
+            </div>
+            <div class="bride">
+                <div class="bride-info">
+                    <h2>Naila Azzahra</h2>
+                    <hr>
+                    <p>Binti Andre Ahmad</p>
+                </div>
+                <img src="/assets/Group 4.png" alt="Bride">
+            </div>            
+        </div> 
+        <footer>
+          <div class="footer-container">
+          <a href="/page/index.html">
+            <button class="footer-btn">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
+            </button>
+          </a>
+            <button class="footer-btn heart-btn">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0l-1 1-1-1a5.5 5.5 0 0 0-7.8 7.8l8.8 8.8 8.8-8.8a5.5 5.5 0 0 0 0-7.8z"></path>
+              </svg>
+            </button>   
+            <a href="video.html">
+              <button class="footer-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </button>
+            </a>
+          </div>
+        </footer>      
+        <div class="audio-player">
+          <audio id="myAudio" controls>
+              <source src="/assets/audio.mp3" type="audio/mpeg">
+              Your browser does not support the audio element.
+          </audio>
+      </div>
+    </div>      
+    </div>    
+    <script>
+        document.getElementById('groomImage').addEventListener('click', function() {
+            this.classList.add('zoom-in');
+        });
+        document.getElementById('brideImage').addEventListener('click', function() {
+            this.classList.add('zoom-in');
+        });
+        document.querySelector('.footer-btn').addEventListener('click', function(e) {
+  e.preventDefault(); // Mencegah perpindahan langsung
+  
+  // Tambahkan kelas animasi ke halaman saat tombol ditekan
+  document.body.classList.add('page-slide-out');
+  
+  // Tunggu hingga animasi selesai, lalu pindah ke halaman berikutnya
+  setTimeout(function() {
+    window.location.href = 'video.html'; // Ganti dengan halaman tujuanmu
+  }, 800); // Durasi animasi disesuaikan dengan animasi CSS (0.8 detik)
+});
+        window.onload = function() {
+        const audio = document.getElementById('myAudio');
+        const playPauseButton = document.getElementById('playPause');
+        const stopButton = document.getElementById('stopAudio');
+        const savedTime = localStorage.getItem('audioTime');
+        if (savedTime) {
+            audio.currentTime = savedTime; 
+        }
+        window.onbeforeunload = function() {
+            localStorage.setItem('audioTime', audio.currentTime);
+        };
+    playPauseButton.addEventListener('click', function() {
+        if (audio.paused) {
+            audio.play();
+        } else {
+            audio.pause();
+        }
+    });
+    stopButton.addEventListener('click', function() {
+        audio.pause();
+        audio.currentTime = 0;
+    });
+};
+    </script>
+</body>
+</html>

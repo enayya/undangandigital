@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tampilkan Ucapan</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #bd7878; /* Warna latar belakang */
+            color: #333; /* Warna teks */
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center; /* Judul di tengah */
+            color: #b31510; /* Warna judul */
+            margin-bottom: 20px; /* Jarak bawah judul */
+        }
+
+        #greetingsDisplay {
+            max-width: 800px; /* Lebar maksimal tampilan ucapan */
+            margin: 0 auto; /* Pusatkan tampilan */
+            padding: 20px;
+            background-color: #fff; /* Latar belakang putih untuk tampilan */
+            border-radius: 10px; /* Sudut membulat */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Bayangan halus */
+        }
+
+        .greeting {
+            border-bottom: 1px solid #ddd; /* Garis pemisah */
+            padding: 10px 0; /* Ruang di dalam setiap ucapan */
+        }
+
+        .greeting:last-child {
+            border-bottom: none; /* Hapus garis pemisah di ucapan terakhir */
+        }
+
+        .greeting p {
+            margin: 5px 0; /* Jarak antar paragraf */
+        }
+
+        .greeting .label {
+            font-weight: bold; /* Tebalkan label */
+            color: #b31510; /* Warna label */
+        }
+
+        .out-page {
+            margin-top: 20px;
+            text-align: left;
+            padding-left: 30px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #ff0000;
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #990000;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px; 
+            }
+
+            #greetingsDisplay {
+                padding: 15px; 
+            }
+
+            h1 {
+                font-size: 24px; 
+            }
+
+            .greeting {
+                padding: 8px 0; 
+            }
+
+            .greeting .label {
+                font-size: 16px; 
+            }
+
+            .greeting p {
+                font-size: 14px; 
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 40px; 
+            }
+
+            .greeting .label {
+                font-size: 30px;
+            }
+
+            .greeting p {
+                font-size: 25px; 
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Reservasi & Pesan</h1>
+    <div id="greetingsDisplay"></div>
+    <div class="out-page"></div>
+        <a href="/page/rsvp.html" class="button"> < Kembali</a>
+    </div>
+    <script>
+        document.getElementById('greetingForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Mencegah form dikirim secara default
+
+    // Ambil nilai input
+    const name = document.querySelector('input[name="name"]').value;
+    const email = document.querySelector('input[name="email"]').value;
+    const keterangan = document.querySelector('input[name="keterangan"]').value;
+    const greeting = document.getElementById('greetingInput').value;
+
+    // Simpan di localStorage
+    const greetings = JSON.parse(localStorage.getItem('greetings')) || [];
+    greetings.push({ name, email, keterangan, greeting });
+    localStorage.setItem('greetings', JSON.stringify(greetings));
+
+    // Tampilkan alert setelah data berhasil disimpan
+    alert('Pesan terkirim!'); // Ditampilkan di sini setelah data disimpan
+
+    // Kosongkan form
+    document.getElementById('greetingForm').reset();
+});
+
+    </script>
+</body>
+</html>
